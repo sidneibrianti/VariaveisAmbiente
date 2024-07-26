@@ -9,5 +9,5 @@ services:
     ports:
     - 8080:8080
     environment:
-    - Nivel1__Nivel2a=DockerCompose1
-    - Nivel1__Nivel2b__Nivel3=DockerCompose2
+    - Nivel1__Nivel2a=DockerComposeTeste1
+    - Nivel1__Nivel2b__Nivel3=DockerComposeTeste2
