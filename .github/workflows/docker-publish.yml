@@ -1,6 +1,5 @@
 name: CI-build-and-push-image-for-dotnetapp
 
-# Triggers the workflow on push or pull request events for the main branch, and allows manual triggers
 on:
   push:
     branches: [ main ]
@@ -20,29 +19,32 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          node-version: '20'
 
-      # Set up QEMU for multi-platform builds
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
+        with:
+          node-version: '20'
 
-      # Set up Docker Buildx for multi-platform builds
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+        with:
+          node-version: '20'
 
-      # Log in to DockerHub
       - name: Log in to DockerHub
         uses: docker/login-action@v2
         with:
+          node-version: '20'
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Build and push the Docker image
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
+          node-version: '20'
           context: .
           file: ./VariaveisAmbiente/Dockerfile
           push: true
