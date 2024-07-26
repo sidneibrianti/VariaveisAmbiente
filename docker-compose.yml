@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  variaveisambiente:
+    image: ${DOCKER_REGISTRY-}variaveisambiente
+    build:
+      context: .
+      dockerfile: VariaveisAmbiente/Dockerfile
+    ports:
+    - 8080:8080
+    environment:
+    - Nivel1__Nivel2a=DockerCompose1
+    - Nivel1__Nivel2b__Nivel3=DockerCompose2
