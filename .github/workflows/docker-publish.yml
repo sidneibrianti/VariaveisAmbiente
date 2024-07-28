@@ -44,5 +44,5 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:${{ steps.meta.outputs.tags }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:${{github.ref_name }}
     
