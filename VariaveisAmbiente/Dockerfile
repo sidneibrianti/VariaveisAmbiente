@@ -4,6 +4,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
 EXPOSE 8080
+LABEL org.opencontainers.image.description="Aplicativo de Teste: Enviando Variáveis de Ambiente com Dockerfile e Docker Compose no .NET 8"
 
 ENV Nivel1__Nivel2a "Dockerfile1"
 ENV Nivel1__Nivel2b__Nivel3 "Dockerfile2"
