@@ -32,6 +32,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
 
+      - id: string
+        uses: ASzc/change-string-case-action@v1
+        with:
+              string: ${{ github.repository }}
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
@@ -41,6 +46,6 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:${{github.ref_name }}
-            ghcr.io/${{ github.repository}}:latest
-            ghcr.io/${{ github.repository }}:${{github.ref_name }}  
+            ghcr.io/${{ steps.string.outputs.lowercase }}:latest
+            ghcr.io/${{ steps.string.outputs.lowercase }}:${{github.ref_name }}  
     
