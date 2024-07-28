@@ -3,13 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariaveisAmbiente", "VariaveisAmbiente\VariaveisAmbiente.csproj", "{45A89AFB-6FFD-4E60-BF78-53118B6CD112}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VariaveisAmbiente", "VariaveisAmbiente\VariaveisAmbiente.csproj", "{45A89AFB-6FFD-4E60-BF78-53118B6CD112}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A0910BAE-1F46-4364-9814-57C7F8E893FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{074AF12A-6198-49D1-B575-1EFF32C81B65}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\docker-publish.yml = .github\workflows\docker-publish.yml
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 	EndProjectSection

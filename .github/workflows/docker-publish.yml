@@ -1,14 +1,11 @@
-name: CI-build-and-push-image-for-dotnetapp
+name: CI-build-and-push-image-for-dockerhub
 
 on:
   workflow_dispatch:
   push:
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - 'main'
-
+  
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -37,4 +34,6 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:${{github.ref_name }}
+            ghcr.io/sidneibrianti/variavelambiente:latest
+            ghcr.io/sidneibrianti/variavelambiente:${{github.ref_name }}  
     
