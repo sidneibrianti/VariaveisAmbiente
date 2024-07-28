@@ -40,8 +40,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./VariaveisAmbiente/Dockerfile
-          push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/variavelambiente:${{ steps.meta.outputs.tags }}
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
